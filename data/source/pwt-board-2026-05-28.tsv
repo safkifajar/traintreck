@@ -1,0 +1,200 @@
+# Jadwal kedatangan/keberangkatan Stasiun Purwokerto (PWT) untuk 2026-05-28.
+# Sumber: 168railway.com/jadwal-stasiun/purwokerto (berbasis GAPEKA 2025).
+# Diambil manual oleh pemilik produk. Kolom: trainNo TAB name TAB route TAB arrivePWT TAB departPWT
+# arrive/depart "-" artinya kosong (origin/terminus di PWT). Route = "Asal → Tujuan".
+KA 124	Cakrabuana	Gambir → Purwokerto	00:08	-
+KA 124B	Cakrabuana	Gambir → Purwokerto	00:08	-
+KA 149	Singasari	Blitar → Pasar Senen	00:11	00:16
+KA 116	Sawunggalih	Pasar Senen → Kutoarjo	00:31	00:36
+KA 116B	Sawunggalih	Pasar Senen → Kutoarjo	00:34	00:39
+KA 14	Argo Lawu	Gambir → Solo Balapan	00:54	00:57
+KA 2643F	Gamao Tanker	Kroya → Tegal	-	01:00
+KA 54	Purwojaya	Gambir → Kroya	01:09	01:14
+KA 7	Bima	Surabaya Gubeng → Gambir	01:19	01:24
+KA 48	Taksaka	Gambir → Yogyakarta	01:30	01:35
+KA 144	Madiun Jaya	Pasar Senen → Madiun	01:44	01:49
+KA 63B	Manahan	Solo Balapan → Gambir	01:46	01:51
+KA 63	Manahan	Solo Balapan → Gambir	01:46	01:53
+KA 144B	Madiun Jaya	Pasar Senen → Madiun	01:48	01:53
+PLB 7005	Batavia	Solo Balapan → Gambir	01:57	02:05
+KA 76	Mataram	Pasar Senen → Solo Balapan	02:11	02:16
+KA 76B	Mataram	Pasar Senen → Solo Balapan	02:11	02:16
+KA 281	Bengawan	Purwosari → Pasar Senen	02:21	02:26
+PLB 7032A	Tambahan PSE-YK	Pasar Senen → Yogyakarta	02:28	02:38
+KP/11006	Tambahan PSE SLO	Pasar Senen → Solo Balapan	02:28	02:38
+KA 2612	Gamao Tanker	Tegal → Kroya	-	02:32
+KP/10923	Tambahan SLO-GMR	Solo Balapan → Gambir	02:43	02:53
+KA 2717	Karacibon Service	Kroya → Cirebon Prujakan	-	02:45
+KA 150	Singasari	Pasar Senen → Blitar	02:56	03:01
+KA 255	Jaka Tingkir	Solo Balapan → Pasar Senen	03:00	03:05
+KA 255B	Jaka Tingkir	Solo Balapan → Pasar Senen	03:00	03:05
+PLB 7001A	Gajayana Tambahan	Malang → Gambir	03:14	03:22
+KA 64	Manahan	Gambir → Solo Balapan	03:24	03:29
+KA 64B	Manahan	Gambir → Solo Balapan	03:24	03:29
+KA 258	Progo	Pasar Senen → Lempuyangan	03:59	04:04
+KA 258B	Progo	Pasar Senen → Lempuyangan	03:59	04:04
+KA 169	Malioboro Ekspres	Malang → Purwokerto	04:05	-
+KA 169B	Malioboro Ekspres	Malang → Purwokerto	04:08	-
+KA 301	Parcel Tengah	Malang → Jakarta Gudang	04:16	04:26
+KP/11064	KLB Kirim Rangkaian	Tegal → Kroya	-	04:24
+PLB 7710	Motis Tengah	Kampung Bandan → Lempuyangan	04:30	04:43
+PLB 7002A	Gajayana Tambahan	Gambir → Malang	05:00	05:05
+KA 181	Kamandaka	Purwokerto → Tegal	-	05:10
+KA 121	Cakrabuana	Purwokerto → Gambir	-	05:30
+KA 121B	Cakrabuana	Purwokerto → Gambir	-	05:30
+KP/10934	KLB Kirim Rangkaian Ekonomi Kerakyatan	Kampung Bandan → Yogyakarta	05:30	06:05
+KA 289	Serayu	Kroya → Purwokerto	06:00	-
+D5/10051	KLB Kirim KPJR	Kroya → Bumiayu	-	06:40
+KP/10985	KLB Kirim KPJR	Kroya → Cirebon Prujakan	-	06:42
+KA 248	Logawa	Purwokerto → Surabaya Gubeng	-	06:45
+KA 248C	Logawa	Purwokerto → Surabaya Gubeng	-	06:45
+KP/10943	Kirim KPJR	Purwosari → Cirebon Prujakan	06:49	06:54
+KA 286	Serayu	Purwokerto → Kroya	-	07:00
+D5/10063	KLB Kereta Ukur	Purwokerto → Prupuk	-	07:15
+PLB 7025	Tambahan SLO-PSE	Solo Balapan → Pasar Senen	07:24	07:29
+KP/10994	KLB Kirim Lokomotif	Jatinegara → Yogyakarta	07:28	07:31
+KA 2617	Gamao Tanker	Kroya → Tegal	-	07:30
+KP/10739	KLB KP/10739	Solo Jebres → Kampung Bandan	07:47	08:22
+KP/11058	KLB Rombongan	Purwokerto → Kutoarjo	-	08:00
+KA 111B	Sawunggalih	Kutoarjo → Pasar Senen	08:05	08:10
+KA 111	Sawunggalih	Kutoarjo → Pasar Senen	08:07	08:12
+KA 170	Malioboro Ekspres	Purwokerto → Malang	-	08:20
+KA 170B	Malioboro Ekspres	Purwokerto → Malang	-	08:20
+KA 53F	Purwojaya	Kroya → Gambir	08:23	08:29
+D5/10889	KLB Kirim Rangkaian	Kutoarjo → Purwokerto	08:34	-
+KA 2644F	Gamao Tanker	Tegal → Kroya	-	08:36
+PLB 7007C	Tambahan YK GMR	Yogyakarta → Gambir	08:37	08:44
+PLB 7039	Tambahan LPN PSE	Lempuyangan → Pasar Senen	08:56	09:01
+KA 154	Ranggajati	Cirebon → Surabaya Gubeng	09:06	09:11
+KA 43	Taksaka	Yogyakarta → Gambir	09:18	09:22
+D5/10820	KLB Kirim Rangkaian	Purwokerto → Kutoarjo	-	09:25
+KA 109B	Fajar Utama Yogyakarta	Yogyakarta → Pasar Senen	09:31	09:36
+KA 109	Fajar Utama Yogyakarta	Yogyakarta → Pasar Senen	09:33	09:38
+PLB 7028B	Kutojaya Utara	Pasar Senen → Kutoarjo	09:37	09:42
+KA 193	Joglosemarkerto	Solo Balapan → Tegal	10:02	10:07
+PLB 7010C	Tambahan GMR YK	Gambir → Yogyakarta	10:02	10:08
+KA 198A	Kamandaka	Tegal → Kroya	10:03	10:08
+D5/10953	KLB Kirim Rangkaian	Kroya → Tegal	10:13	10:23
+KLB KP/10635	KLB UM Cirebon	Surabaya Gubeng → Cirebon	10:13	10:28
+KA 74	Fajar Utama Solo	Pasar Senen → Solo Balapan	10:14	10:19
+KA 74B	Fajar Utama Solo	Pasar Senen → Solo Balapan	10:15	10:19
+KA 6	Argo Semeru	Gambir → Surabaya Gubeng	10:36	10:41
+KA 6-TEST	Ujicoba Live GPS KA 6	Gambir → Surabaya Gubeng	10:36	10:41
+KP/10969	KLB Kirim Rangkaian	Purwokerto → Pasar Senen	-	10:40
+KA 103	Bogowonto	Lempuyangan → Pasar Senen	10:49	10:54
+KA 103B	Bogowonto	Lempuyangan → Pasar Senen	10:49	10:54
+KA 114	Sawunggalih	Pasar Senen → Kutoarjo	11:00	11:05
+KA 114C	Sawunggalih	Pasar Senen → Kutoarjo	11:03	11:08
+KA 13	Argo Lawu	Solo Balapan → Gambir	11:07	11:10
+KA 50F	Purwojaya	Gambir → Kroya	11:26	11:31
+KA 188A	Joglosemarkerto	Tegal → Solo Balapan	11:39	11:44
+KA 75B	Mataram	Solo Balapan → Pasar Senen	11:52	11:57
+KA 46	Taksaka	Gambir → Yogyakarta	11:55	11:59
+KA 75	Mataram	Solo Balapan → Pasar Senen	12:01	12:06
+KA 143B	Madiun Jaya	Madiun → Pasar Senen	12:14	12:19
+PLB 7038	Tambahan GMR-YK	Gambir → Yogyakarta	12:18	12:23
+KA 143	Madiun Jaya	Madiun → Pasar Senen	12:19	12:24
+KA 110	Fajar Utama Yogyakarta	Pasar Senen → Yogyakarta	12:28	12:33
+KA 110B	Fajar Utama Yogyakarta	Pasar Senen → Yogyakarta	12:28	12:33
+PLB 7031A	Tambahan YK-PSE	Yogyakarta → Pasar Senen	12:29	12:36
+KA 2623	Gamao Tanker	Kroya → Tegal	-	12:36
+KP/11108	KLB Rombongan	Gambir → Yogyakarta	12:40	12:45
+PLB 7709	Motis Tengah	Lempuyangan → Kampung Bandan	12:40	13:10
+KA 61	Manahan	Solo Balapan → Gambir	12:52	12:57
+KA 61B	Manahan	Solo Balapan → Gambir	12:53	12:58
+KA 16	Argo Dwipangga	Gambir → Solo Balapan	12:58	13:01
+KA 106	Gajahwong	Pasar Senen → Lempuyangan	13:10	13:16
+KA 106B	Gajahwong	Pasar Senen → Lempuyangan	13:10	13:16
+KA 161	Bangunkarta	Jombang → Pasar Senen	13:22	13:27
+KP/10926	KLB Kirim Rangkaian Asistensi	Cirebon → Kutoarjo	13:30	13:40
+KAIS4	KLB Inspeksi Direksi dan Komisaris	Purwokerto → Surabaya Gubeng	-	13:35
+PLB 7708	Motis Tengah	Kampung Bandan → Lempuyangan	13:40	13:50
+KA 89	Gayabaru Malam Selatan	Surabaya Gubeng → Pasar Senen	13:51	13:56
+KA 2618	Gamao Tanker	Tegal → Kroya	-	14:00
+KA 207F	Baturraden Ekspres	Kroya → Purwokerto	14:04	-
+KP/11019	KLB Rombongan	Kutoarjo → Jatinegara	14:09	14:14
+KA 282	Bengawan	Pasar Senen → Purwosari	14:16	14:21
+PLB 7006	Batavia	Gambir → Solo Balapan	14:31	14:36
+KA 195	Kamandaka	Kroya → Tegal	14:33	14:40
+KP/11056	KLB Rombongan	Jatinegara → Purwokerto	14:43	-
+D5/10810	KLB Kirim Lokomotif	Tegal → Kroya	14:43	14:47
+D5/10877	KLB NR Rescue	Purwokerto → Bumiayu	-	14:45
+KP/10866	KLB Rombongan Kementrian Imigrasi	Gambir → Kroya	14:47	14:52
+D5/10076	KLB Kereta Ukur	Tegal → Kroya	14:51	14:56
+D5/10902	KLB Kirim KPJR	Bumiayu → Kroya	-	14:58
+KA 5	Argo Semeru	Surabaya Gubeng → Gambir	15:01	15:06
+KA 62	Manahan	Gambir → Solo Balapan	15:09	15:14
+KA 62B	Manahan	Gambir → Solo Balapan	15:10	15:15
+KA 115	Sawunggalih	Kutoarjo → Pasar Senen	15:17	15:22
+KA 115B	Sawunggalih	Kutoarjo → Pasar Senen	15:18	15:23
+KA 184	Kamandaka	Tegal → Purwokerto	15:28	-
+KA 49	Purwojaya	Kroya → Gambir	15:42	15:47
+KA 2718	Karacibon Service	Cirebon Prujakan → Kroya	-	15:48
+KP/10579	KLB Inspeksi Nataru Selatan	Kroya → Purwokerto	15:55	-
+KA 257	Progo	Lempuyangan → Pasar Senen	15:58	16:03
+KA 257B	Progo	Lempuyangan → Pasar Senen	15:58	16:03
+KA 90	Gayabaru Malam Selatan	Pasar Senen → Surabaya Gubeng	16:17	16:24
+D5/10061	KLB Kereta Ukur	Kroya → Purwokerto	16:22	-
+PLB 7703	Motis Tengah	Purwosari → Kampung Bandan	16:25	16:53
+KA 256	Jaka Tingkir	Pasar Senen → Solo Balapan	16:30	16:35
+KA 256B	Jaka Tingkir	Pasar Senen → Solo Balapan	16:30	16:35
+KA 47	Taksaka	Yogyakarta → Gambir	16:37	16:41
+KA 290	Serayu	Purwokerto → Kroya	-	16:45
+KP/10960	Tambahan GMR-SLO	Gambir → Solo Balapan	16:53	17:00
+KP/11003	KLB Rombongan	Purwokerto → Gambir	-	17:00
+KA 153	Ranggajati	Surabaya Gubeng → Cirebon	17:10	17:15
+KA 167	Kertanegara	Malang → Purwokerto	17:22	-
+KA 162	Bangunkarta	Pasar Senen → Jombang	17:23	17:28
+KA 167B	Kertanegara	Malang → Purwokerto	17:24	-
+KA 185	Joglosemarkerto	Purwokerto → Tegal	-	17:30
+KA 112	Sawunggalih	Pasar Senen → Kutoarjo	17:39	17:44
+KA 112B	Sawunggalih	Pasar Senen → Kutoarjo	17:41	17:46
+PLB 7027A	Kutojaya Utara	Kutoarjo → Pasar Senen	17:42	17:47
+KA 58F	Purwojaya	Gambir → Kroya	17:51	17:56
+KA 2611	Gamao Tanker	Kroya → Tegal	-	17:54
+KA 44	Taksaka	Gambir → Yogyakarta	18:10	18:15
+PLB 7009C	Tambahan YK GMR	Yogyakarta → Gambir	18:11	18:17
+KP/10955	KLB NR Rescue	Solo Balapan → Bumiayu	18:35	18:40
+KA 168	Kertanegara	Purwokerto → Malang	-	18:40
+KA 168D	Kertanegara	Purwokerto → Malang	-	18:40
+KA 208F	Baturraden Ekspres	Purwokerto → Kroya	-	18:55
+PLB 7041	Tambahan SGU-GMR	Surabaya Gubeng → Gambir	18:58	19:03
+PLB 7026A	Tambahan PSE-SLO	Pasar Senen → Solo Balapan	19:16	19:21
+KP 10844	KP 10844	Pasar Senen → Surabaya Gubeng	19:28	19:33
+KA 2624	Gamao Tanker	Tegal → Kroya	-	19:34
+KA 107B	Senja Utama Yogyakarta	Yogyakarta → Pasar Senen	19:50	19:55
+KA 107	Senja Utama Yogyakarta	Yogyakarta → Pasar Senen	19:51	19:56
+PLB 7042	Tambahan GMR-SGU	Gambir → Surabaya Gubeng	19:53	19:58
+KP/11026	Tambahan GMR ML	Gambir → Malang	19:53	19:58
+KP/11020	KLB Kirim Lokomotif	Cirebon → Yogyakarta	20:00	20:05
+KP/11031	KLB Kirim Rangkaian	Kroya → Tegal	-	20:06
+PLB 7040	Tambahan PSE LPN	Pasar Senen → Lempuyangan	20:10	20:15
+KA 247	Logawa	Surabaya Gubeng → Purwokerto	20:20	-
+KA 247C	Logawa	Surabaya Gubeng → Purwokerto	20:20	-
+PLB 7704	Motis Tengah	Kampung Bandan → Purwosari	20:22	20:32
+KA 285	Serayu	Kroya → Purwokerto	20:35	-
+PLB 7037	Tambahan YK-GMR	Yogyakarta → Gambir	20:47	20:55
+KA 251	Jayakarta	Surabaya Gubeng → Pasar Senen	21:04	21:11
+KA 251B	Jayakarta	Surabaya Gubeng → Pasar Senen	21:04	21:11
+KA 8	Bima	Gambir → Surabaya Gubeng	21:16	21:21
+KA 57F	Purwojaya	Kroya → Gambir	21:32	21:37
+KA 113	Sawunggalih	Kutoarjo → Pasar Senen	21:52	21:57
+KA 113B	Sawunggalih	Kutoarjo → Pasar Senen	21:52	21:57
+KA 252B	Jayakarta	Pasar Senen → Surabaya Gubeng	21:53	21:58
+KA 252	Jayakarta	Pasar Senen → Surabaya Gubeng	21:54	21:59
+PLB 7008C	Tambahan GMR YK	Gambir → Yogyakarta	22:08	22:13
+KA 73	Senja Utama Solo	Solo Balapan → Pasar Senen	22:10	22:15
+KA 73B	Senja Utama Solo	Solo Balapan → Pasar Senen	22:11	22:15
+PLB 7707	Motis Tengah	Lempuyangan → Kampung Bandan	22:22	22:32
+KA 190	Kamandaka	Tegal → Purwokerto	22:34	-
+KA 35	Gajayana	Malang → Gambir	22:35	22:40
+KA 104	Bogowonto	Pasar Senen → Lempuyangan	22:56	23:01
+KA 104B	Bogowonto	Pasar Senen → Lempuyangan	22:56	23:01
+KA 45	Taksaka	Yogyakarta → Gambir	22:59	23:02
+KA 36	Gajayana	Gambir → Malang	23:11	23:16
+KA 15	Argo Dwipangga	Solo Balapan → Gambir	23:12	23:15
+KA 108B	Senja Utama Yogyakarta	Pasar Senen → Yogyakarta	23:32	23:37
+KA 108	Senja Utama Yogyakarta	Pasar Senen → Yogyakarta	23:34	23:39
+KA 105	Gajahwong	Lempuyangan → Pasar Senen	23:42	23:47
+KA 105B	Gajahwong	Lempuyangan → Pasar Senen	23:42	23:47
+KA 302	Parcel Tengah	Jakarta Gudang → Malang	23:45	23:55

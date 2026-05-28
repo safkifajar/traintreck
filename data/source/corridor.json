@@ -1,0 +1,34 @@
+{
+  "_comment": "Model koridor sederhana: posisi linear (km kumulatif perkiraan) tiap stasiun pada poros barat->timur lintas selatan Jawa, plus cabang Tegal (utara) & Malang. Dipakai generator untuk mengestimasi jam antar stasiun secara proporsional jarak. Angka km PERKIRAAN, bukan jarak rel resmi.",
+  "mainline": {
+    "JAKG": 5,
+    "KPB": 8,
+    "GMR": 10,
+    "PSE": 12,
+    "JNG": 18,
+    "CN": 215,
+    "CNP": 217,
+    "PPK": 280,
+    "BMA": 295,
+    "PWT": 345,
+    "KYA": 375,
+    "KTA": 440,
+    "YK": 510,
+    "LPN": 512,
+    "PWS": 575,
+    "SLO": 580,
+    "SK": 584,
+    "MN": 690,
+    "JG": 780,
+    "SGU": 845
+  },
+  "branchTegal": {
+    "_from": "PPK",
+    "TG": 320
+  },
+  "branchMalang": {
+    "_from": "SGU",
+    "BL": 960,
+    "ML": 915
+  }
+}
