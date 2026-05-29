@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   title: "Train Tracker Purwokerto",
   description:
     "Perkiraan posisi kereta api real-time di peta untuk kereta yang melintasi Stasiun Purwokerto (PWT). Posisi diestimasi dari jadwal, bukan GPS.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export const viewport: Viewport = {
