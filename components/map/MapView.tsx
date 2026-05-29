@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type maplibregl from "maplibre-gl";
 import type { Station, Train, TrainClass } from "@/lib/types";
-import { getLivePositions } from "@/lib/trains";
+import { getLivePositions, getStationsById } from "@/lib/trains";
 import {
   classColor,
   etaPwtText,
@@ -13,6 +13,7 @@ import {
   trainDirection,
   type Direction,
 } from "@/lib/display";
+import { getTrainsPassingNear, nearestStation } from "@/lib/nearby";
 import { TrainMap, PWT_CENTER, type MapTrain } from "./TrainMap";
 import { ClassBadge } from "@/components/ClassBadge";
 import { Disclaimer } from "@/components/Disclaimer";
@@ -85,6 +86,21 @@ export function MapView({
   );
 
   const hasLive = liveTrains.length > 0;
+
+  // Kereta yang akan lewat dekat lokasi user (jika lokasi aktif).
+  const nearby = useMemo(() => {
+    if (!userLocation) return null;
+    const stationsById = getStationsById();
+    const passing = getTrainsPassingNear(
+      userLocation.lat,
+      userLocation.lng,
+      trains,
+      stationsById,
+      now
+    ).slice(0, 5);
+    const nearSt = nearestStation(userLocation.lat, userLocation.lng, stations);
+    return { passing, nearSt };
+  }, [userLocation, trains, stations, now]);
 
   function recenter() {
     mapInstanceRef.current?.flyTo({ center: PWT_CENTER, zoom: 7.5 });
@@ -195,6 +211,57 @@ export function MapView({
 
       {/* Legend kelas */}
       <Legend />
+
+      {/* Panel kereta lewat dekat lokasi user */}
+      {nearby && !selected && (
+        <div className="absolute inset-x-3 bottom-16 z-10 sm:inset-x-auto sm:left-3 sm:w-72">
+          <div className="rounded-xl bg-white/97 p-3 shadow-lg backdrop-blur">
+            <p className="text-xs font-semibold text-zinc-900">
+              Kereta lewat dekat Anda
+            </p>
+            {nearby.nearSt && (
+              <p className="text-[11px] text-zinc-500">
+                Stasiun terdekat: {nearby.nearSt.station.name} (
+                {(nearby.nearSt.distanceMeters / 1000).toFixed(1)} km)
+              </p>
+            )}
+            {nearby.passing.length === 0 ? (
+              <p className="mt-2 text-xs text-zinc-500">
+                Tidak ada kereta yang akan lewat dekat lokasi Anda saat ini.
+              </p>
+            ) : (
+              <ul className="mt-2 flex flex-col gap-1.5">
+                {nearby.passing.map((n) => (
+                  <li key={n.train.id}>
+                    <Link
+                      href={`/kereta/${encodeURIComponent(n.train.id)}`}
+                      className="flex items-center justify-between gap-2 rounded-lg bg-zinc-50 px-2 py-1.5"
+                    >
+                      <span className="min-w-0">
+                        <span className="block truncate text-xs font-medium text-zinc-900">
+                          {n.train.name}
+                        </span>
+                        <span className="text-[10px] text-zinc-500">
+                          lewat ~{n.passHhmm}
+                        </span>
+                      </span>
+                      <span
+                        className="shrink-0 text-xs font-semibold"
+                        style={{ color: classColor(n.train.class) }}
+                      >
+                        {n.etaMin === 0 ? "sekarang" : `${n.etaMin} mnt`}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <p className="mt-2 text-[10px] leading-tight text-zinc-400">
+              Estimasi dari jadwal, bukan posisi GPS kereta.
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Empty state */}
       {!hasLive && (

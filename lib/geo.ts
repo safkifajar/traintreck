@@ -2,6 +2,36 @@ const R = 6371000; // radius bumi meter
 const toRad = (d: number) => (d * Math.PI) / 180;
 const toDeg = (r: number) => (r * 180) / Math.PI;
 
+// Proyeksikan titik p ke segmen a-b (semua [lng, lat]).
+// Kembalikan fraksi t (0..1) posisi proyeksi sepanjang segmen + jarak (meter)
+// dari p ke titik proyeksi. Pakai aproksimasi planar lokal (cukup untuk skala km).
+export function projectPointToSegment(
+  p: [number, number],
+  a: [number, number],
+  b: [number, number]
+): { t: number; distance: number } {
+  // Konversi ke meter lokal relatif a (equirectangular).
+  const lat0 = toRad(a[1]);
+  const mPerDegLat = 111320;
+  const mPerDegLng = 111320 * Math.cos(lat0);
+  const ax = 0;
+  const ay = 0;
+  const bx = (b[0] - a[0]) * mPerDegLng;
+  const by = (b[1] - a[1]) * mPerDegLat;
+  const px = (p[0] - a[0]) * mPerDegLng;
+  const py = (p[1] - a[1]) * mPerDegLat;
+
+  const dx = bx - ax;
+  const dy = by - ay;
+  const segLen2 = dx * dx + dy * dy;
+  let t = segLen2 === 0 ? 0 : ((px - ax) * dx + (py - ay) * dy) / segLen2;
+  t = Math.max(0, Math.min(1, t));
+  const projx = ax + t * dx;
+  const projy = ay + t * dy;
+  const distance = Math.hypot(px - projx, py - projy);
+  return { t, distance };
+}
+
 // Jarak haversine (meter) antara dua titik [lng, lat].
 export function haversine(a: [number, number], b: [number, number]): number {
   const dLat = toRad(b[1] - a[1]);
