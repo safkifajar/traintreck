@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#1565C0"/>
+  <g fill="#ffffff">
+    <!-- Badan lokomotif -->
+    <path d="M20 16h18a8 8 0 0 1 8 8v18a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V20a4 4 0 0 1 4-4z"/>
+    <!-- Kaca depan (potong dari badan) -->
+    <rect x="21" y="21" width="20" height="9" rx="2" fill="#1565C0"/>
+    <!-- Lampu depan -->
+    <circle cx="38" cy="38" r="2.5" fill="#1565C0"/>
+    <!-- Roda -->
+    <circle cx="24" cy="50" r="3.5"/>
+    <circle cx="38" cy="50" r="3.5"/>
+  </g>
+</svg>
