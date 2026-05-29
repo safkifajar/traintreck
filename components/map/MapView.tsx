@@ -29,9 +29,16 @@ const CLASS_FILTERS: (TrainClass | "Semua")[] = [
 interface MapViewProps {
   stations: Station[];
   trains: Train[];
+  // Kelas tinggi container peta. Default flex-1 (isi sisa layar);
+  // di landing dipakai tinggi tetap agar bisa di-scroll bersama hero.
+  heightClass?: string;
 }
 
-export function MapView({ stations, trains }: MapViewProps) {
+export function MapView({
+  stations,
+  trains,
+  heightClass = "flex-1",
+}: MapViewProps) {
   const [now, setNow] = useState(() => new Date());
   const [classFilter, setClassFilter] = useState<TrainClass | "Semua">("Semua");
   const [dirFilter, setDirFilter] = useState<Direction | "Semua">("Semua");
@@ -78,7 +85,7 @@ export function MapView({ stations, trains }: MapViewProps) {
   }
 
   return (
-    <div className="relative flex-1">
+    <div className={`relative ${heightClass}`}>
       <TrainMap
         stations={stations}
         liveTrains={liveTrains}
