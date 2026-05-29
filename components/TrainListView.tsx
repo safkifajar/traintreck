@@ -13,6 +13,7 @@ import {
   type Direction,
 } from "@/lib/display";
 import { ClassBadge } from "./ClassBadge";
+import { CategoryBadge } from "./CategoryBadge";
 
 const CLASS_FILTERS: (TrainClass | "Semua")[] = [
   "Semua",
@@ -144,8 +145,11 @@ export function TrainListView({ stations }: Props) {
               className="flex items-center gap-3 rounded-lg bg-white p-3 shadow-sm"
             >
               <div className="min-w-0 flex-1">
-                <span className="block truncate font-medium text-zinc-900">
-                  {train.name}
+                <span className="flex items-center gap-1.5">
+                  <span className="truncate font-medium text-zinc-900">
+                    {train.name}
+                  </span>
+                  <CategoryBadge category={train.category} />
                 </span>
                 <p className="truncate text-xs text-zinc-500">
                   {train.id} &middot; {nameById[train.originId] ?? train.originId}{" "}

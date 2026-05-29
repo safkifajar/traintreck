@@ -24,10 +24,14 @@ export type TrainClass =
   | "Ekonomi"
   | "Lokal";
 
+// Jenis perjalanan: penumpang (komersial), barang (angkutan), dinas (KLB non-komersial).
+export type TrainCategory = "penumpang" | "barang" | "dinas";
+
 export interface Train {
   id: string; // nomor KA, mis. "7017" (unik per perjalanan)
   name: string; // "Argo Dwipangga"
   class: TrainClass;
+  category?: TrainCategory; // jenis perjalanan; default "penumpang" bila absen
   operator: string; // "KAI"
   originId: string; // kode stasiun awal
   destinationId: string; // kode stasiun akhir

@@ -71,6 +71,24 @@ function classify(name: string): TrainClass {
   return "Campuran";
 }
 
+type TrainCategory = "penumpang" | "barang" | "dinas";
+
+// Klasifikasi jenis perjalanan dari id + nama.
+// barang: angkutan barang (tanker, parcel, kirim KPJR).
+// dinas:  KLB non-komersial (ukur, rescue, inspeksi, rombongan, kirim
+//         lokomotif/rangkaian, motis). PLB tambahan = tetap penumpang.
+function categorize(id: string, name: string): TrainCategory {
+  if (/Tanker|Parcel|Gudang/i.test(name)) return "barang";
+  if (
+    /KLB|Kereta Ukur|Rescue|Inspeksi|Rombongan|Kirim (Lokomotif|Rangkaian|KPJR)|^Kirim |Motis|KPJR|Asistensi/i.test(
+      name
+    )
+  ) {
+    return "dinas";
+  }
+  return "penumpang";
+}
+
 function hhmmToMin(s: string): number {
   const [h, m] = s.split(":").map(Number);
   return h * 60 + m;
@@ -136,6 +154,7 @@ interface Train {
   id: string;
   name: string;
   class: TrainClass;
+  category: TrainCategory;
   operator: string;
   originId: string;
   destinationId: string;
@@ -220,6 +239,7 @@ function buildTrain(
     id,
     name,
     class: classify(name),
+    category: categorize(rawNo, name),
     operator: "KAI",
     originId,
     destinationId: destId,

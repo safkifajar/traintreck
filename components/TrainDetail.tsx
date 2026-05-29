@@ -13,6 +13,7 @@ import {
   isLive,
 } from "@/lib/display";
 import { ClassBadge } from "./ClassBadge";
+import { CategoryBadge } from "./CategoryBadge";
 import { TrainStatusBadge } from "./TrainStatusBadge";
 import { Disclaimer } from "./Disclaimer";
 import { TrainScheduleTable } from "./TrainScheduleTable";
@@ -68,6 +69,7 @@ export function TrainDetail({ train, stations, nameById }: Props) {
         <div className="mt-1 flex items-center gap-2">
           <h1 className="text-xl font-semibold text-zinc-900">{train.name}</h1>
           <ClassBadge trainClass={train.class} />
+          <CategoryBadge category={train.category} />
         </div>
         <p className="text-sm text-zinc-500">
           {train.id} &middot; {train.operator} &middot;{" "}

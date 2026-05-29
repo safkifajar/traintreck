@@ -10,6 +10,7 @@ import {
 } from "@/lib/station";
 import { boardStatusText } from "@/lib/display";
 import { ClassBadge } from "./ClassBadge";
+import { CategoryBadge } from "./CategoryBadge";
 import { Disclaimer } from "./Disclaimer";
 
 type Tab = "kedatangan" | "keberangkatan";
@@ -123,8 +124,11 @@ function BoardRow({
           </div>
         </div>
         <div className="min-w-0 flex-1">
-          <span className="block truncate font-medium text-zinc-900">
-            {entry.train.name}
+          <span className="flex items-center gap-1.5">
+            <span className="truncate font-medium text-zinc-900">
+              {entry.train.name}
+            </span>
+            <CategoryBadge category={entry.train.category} />
           </span>
           <p className="truncate text-xs text-zinc-500">
             {entry.train.id} &middot; {tab === "kedatangan" ? "dari" : "menuju"}{" "}
