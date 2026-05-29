@@ -7,7 +7,8 @@ import { classColor } from "@/lib/display";
 import { buildRouteGeoJSON, buildStationGeoJSON } from "@/lib/geojson";
 import { getSegmentsByKey, getStationsById } from "@/lib/trains";
 
-const PWT: [number, number] = [109.2415, -7.4249];
+// Koordinat Stasiun Purwokerto (OSM). Format [lng, lat].
+const PWT: [number, number] = [109.22198, -7.4194775];
 
 const OPENFREEMAP_STYLE = "https://tiles.openfreemap.org/styles/liberty";
 const MAPTILER_KEY = process.env.NEXT_PUBLIC_MAPTILER_KEY;

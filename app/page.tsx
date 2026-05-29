@@ -50,10 +50,25 @@ export default function Home() {
             <Link
               key={f.href}
               href={f.href}
-              className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm transition-colors hover:border-blue-300"
+              className="group flex items-center gap-3 rounded-xl border border-zinc-200 bg-white p-4 shadow-sm transition-all hover:border-blue-300 hover:shadow-md"
             >
-              <h2 className="font-semibold text-zinc-900">{f.title}</h2>
-              <p className="mt-1 text-sm text-zinc-500">{f.desc}</p>
+              <div className="min-w-0 flex-1">
+                <h2 className="font-semibold text-zinc-900">{f.title}</h2>
+                <p className="mt-1 text-sm text-zinc-500">{f.desc}</p>
+              </div>
+              <svg
+                className="shrink-0 text-zinc-300 transition-colors group-hover:text-blue-500"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
             </Link>
           ))}
         </div>

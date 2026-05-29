@@ -9,7 +9,7 @@
   { "id": "TG", "name": "Tegal", "lat": -6.8690, "lng": 109.1400, "line": "lintas-utara", "isMajor": true },
   { "id": "BMA", "name": "Bumiayu", "lat": -7.2470, "lng": 109.0090, "line": "lintas-selatan", "isMajor": false },
   { "id": "PPK", "name": "Prupuk", "lat": -7.1858, "lng": 108.9540, "line": "lintas-selatan", "isMajor": false },
-  { "id": "PWT", "name": "Purwokerto", "lat": -7.4196, "lng": 109.2218, "line": "lintas-selatan", "isMajor": true },
+  { "id": "PWT", "name": "Purwokerto", "lat": -7.4194775, "lng": 109.22198, "line": "lintas-selatan", "isMajor": true },
   { "id": "KYA", "name": "Kroya", "lat": -7.6310, "lng": 109.2470, "line": "lintas-selatan", "isMajor": true },
   { "id": "KTA", "name": "Kutoarjo", "lat": -7.7188, "lng": 109.9110, "line": "lintas-selatan", "isMajor": true },
   { "id": "YK", "name": "Yogyakarta", "lat": -7.7892, "lng": 110.3630, "line": "lintas-selatan", "isMajor": true },

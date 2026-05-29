@@ -66,8 +66,8 @@ export function TrainDetail({ train, stations, nameById }: Props) {
         <Link href="/kereta" className="text-xs font-medium text-blue-700">
           &larr; Daftar kereta
         </Link>
-        <div className="mt-1 flex items-center gap-2">
-          <h1 className="text-xl font-semibold text-zinc-900">{train.name}</h1>
+        <div className="mt-1 flex flex-wrap items-center gap-2">
+          <h1 className="text-xl font-bold text-zinc-900">{train.name}</h1>
           <ClassBadge trainClass={train.class} />
           <CategoryBadge category={train.category} />
         </div>
@@ -79,8 +79,8 @@ export function TrainDetail({ train, stations, nameById }: Props) {
       </header>
 
       {/* Status terkini */}
-      <section className="mb-4 rounded-lg bg-white p-4 shadow-sm">
-        <div className="mb-1 flex items-center gap-2">
+      <section className="mb-3 rounded-xl border border-zinc-100 bg-white p-4 shadow-sm">
+        <div className="mb-1.5 flex items-center gap-2">
           <TrainStatusBadge status={pos.status} />
         </div>
         <p className="text-base font-medium text-zinc-900">{statusText}</p>
@@ -88,7 +88,7 @@ export function TrainDetail({ train, stations, nameById }: Props) {
 
       {/* ETA Purwokerto highlight */}
       <section
-        className="mb-4 rounded-lg p-4 text-white shadow-sm"
+        className="mb-3 rounded-xl p-4 text-white shadow-sm"
         style={{ backgroundColor: classColor(train.class) }}
       >
         <p className="text-xs uppercase tracking-wide opacity-80">
@@ -98,7 +98,7 @@ export function TrainDetail({ train, stations, nameById }: Props) {
       </section>
 
       {/* Mini map */}
-      <section className="mb-4 h-56 overflow-hidden rounded-lg shadow-sm">
+      <section className="mb-3 h-56 overflow-hidden rounded-xl border border-zinc-100 shadow-sm">
         <TrainMap
           stations={routeStations}
           liveTrains={liveTrains}
@@ -109,12 +109,14 @@ export function TrainDetail({ train, stations, nameById }: Props) {
       </section>
 
       {/* Timeline stops */}
-      <section className="mb-4 rounded-lg bg-white p-4 shadow-sm">
+      <section className="mb-3 rounded-xl border border-zinc-100 bg-white p-4 shadow-sm">
         <div className="mb-3 flex items-center justify-between">
           <h2 className="text-sm font-semibold text-zinc-900">
             Perjalanan
           </h2>
-          <span className="text-[10px] text-zinc-400">Tiba / Berangkat</span>
+          <span className="text-[10px] text-zinc-400">
+            Tiba / Berangkat (WIB)
+          </span>
         </div>
         <TrainScheduleTable stopViews={stopViews} nameById={nameById} />
       </section>
