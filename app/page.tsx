@@ -1,58 +1,63 @@
 import Link from "next/link";
-import { MapView } from "@/components/map/MapView";
-import { getAllStations, getAllTrains } from "@/lib/trains";
+
+const FEATURES = [
+  {
+    href: "/peta",
+    title: "Peta Langsung",
+    desc: "Lihat perkiraan posisi semua kereta yang sedang berjalan, bergerak di peta.",
+  },
+  {
+    href: "/stasiun/pwt",
+    title: "Papan Stasiun PWT",
+    desc: "Kedatangan & keberangkatan di Purwokerto dengan estimasi waktu terkini.",
+  },
+  {
+    href: "/kereta",
+    title: "Daftar & Cari Kereta",
+    desc: "Cari kereta, lihat rute, dan estimasi tiba di Purwokerto.",
+  },
+];
 
 export default function Home() {
-  const stations = getAllStations();
-  const trains = getAllTrains();
-
   return (
-    <div className="flex flex-1 flex-col">
-      {/* Hero sambutan */}
-      <section className="bg-gradient-to-b from-blue-700 to-blue-600 px-5 py-8 text-white">
+    <main className="flex flex-1 flex-col">
+      {/* Hero */}
+      <section className="bg-gradient-to-b from-blue-700 to-blue-600 px-5 py-12 text-white">
         <div className="mx-auto w-full max-w-2xl">
-          <h1 className="text-2xl font-bold leading-tight sm:text-3xl">
+          <h1 className="text-3xl font-bold leading-tight sm:text-4xl">
             Train Tracker Purwokerto
           </h1>
-          <p className="mt-2 text-sm text-blue-50 sm:text-base">
-            Perkiraan posisi kereta api di peta untuk semua kereta yang melintasi
-            Stasiun Purwokerto (PWT). Lihat kereta bergerak, estimasi tiba, dan
-            papan stasiun.
+          <p className="mt-3 text-base text-blue-50">
+            Perkiraan posisi kereta api di peta untuk semua kereta yang
+            melintasi Stasiun Purwokerto (PWT).
           </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <a
-              href="#peta"
-              className="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-blue-700"
-            >
-              Lihat peta
-            </a>
-            <Link
-              href="/stasiun/pwt"
-              className="rounded-lg bg-blue-500/40 px-4 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-white/40"
-            >
-              Papan Stasiun PWT
-            </Link>
-            <Link
-              href="/kereta"
-              className="rounded-lg bg-blue-500/40 px-4 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-white/40"
-            >
-              Daftar Kereta
-            </Link>
-          </div>
-          <p className="mt-4 text-xs text-blue-100">
+          <Link
+            href="/peta"
+            className="mt-5 inline-block rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-blue-700"
+          >
+            Buka Peta &rarr;
+          </Link>
+          <p className="mt-5 text-xs text-blue-100">
             Posisi estimasi dari jadwal GAPEKA, bukan GPS real-time.
           </p>
         </div>
       </section>
 
-      {/* Peta */}
-      <div id="peta" className="relative">
-        <MapView
-          stations={stations}
-          trains={trains}
-          heightClass="h-[78vh] min-h-[420px]"
-        />
-      </div>
-    </div>
+      {/* Fitur */}
+      <section className="mx-auto w-full max-w-2xl px-5 py-6">
+        <div className="flex flex-col gap-3">
+          {FEATURES.map((f) => (
+            <Link
+              key={f.href}
+              href={f.href}
+              className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm transition-colors hover:border-blue-300"
+            >
+              <h2 className="font-semibold text-zinc-900">{f.title}</h2>
+              <p className="mt-1 text-sm text-zinc-500">{f.desc}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }

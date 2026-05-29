@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-900">
-        <div className="flex-1 flex flex-col pb-14 sm:pb-0 sm:pt-14">
+        <div className="flex-1 flex flex-col pb-[calc(56px+env(safe-area-inset-bottom))] sm:pb-0 sm:pt-14">
           {children}
         </div>
         <BottomNav />
