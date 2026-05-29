@@ -123,18 +123,16 @@ function BoardRow({
           </div>
         </div>
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2">
-            <span className="truncate font-medium text-zinc-900">
-              {entry.train.name}
-            </span>
-            <ClassBadge trainClass={entry.train.class} />
-          </div>
+          <span className="block truncate font-medium text-zinc-900">
+            {entry.train.name}
+          </span>
           <p className="truncate text-xs text-zinc-500">
             {entry.train.id} &middot; {tab === "kedatangan" ? "dari" : "menuju"}{" "}
             {destName}
           </p>
         </div>
-        <div className="shrink-0 text-right">
+        <div className="flex shrink-0 flex-col items-end gap-1 text-right">
+          <ClassBadge trainClass={entry.train.class} />
           <span
             className={`text-xs font-medium ${
               soon ? "text-blue-700" : "text-zinc-500"
