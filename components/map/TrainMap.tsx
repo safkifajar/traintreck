@@ -30,9 +30,23 @@ interface TrainMapProps {
   interactive?: boolean;
   className?: string;
   onMapReady?: (map: maplibregl.Map) => void;
+  // Lokasi pengguna (titik biru). null = tidak ditampilkan.
+  userLocation?: { lat: number; lng: number } | null;
 }
 
 export const PWT_CENTER = PWT;
+
+// Elemen marker "lokasi saya" — titik biru bergaya Google Maps.
+function makeUserLocationEl(): HTMLDivElement {
+  const el = document.createElement("div");
+  el.style.width = "16px";
+  el.style.height = "16px";
+  el.style.borderRadius = "50%";
+  el.style.background = "#1a73e8";
+  el.style.border = "3px solid white";
+  el.style.boxShadow = "0 0 0 2px rgba(26,115,232,0.4), 0 1px 4px rgba(0,0,0,0.4)";
+  return el;
+}
 
 function makeTrainEl(color: string): HTMLDivElement {
   const el = document.createElement("div");
@@ -64,10 +78,12 @@ export function TrainMap({
   interactive = true,
   className,
   onMapReady,
+  userLocation,
 }: TrainMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const markersRef = useRef<Map<string, maplibregl.Marker>>(new Map());
+  const userMarkerRef = useRef<maplibregl.Marker | null>(null);
   const loadedRef = useRef(false);
   // Simpan data terbaru di ref supaya loop interval & selectedTrain memakai nilai terkini
   // tanpa re-init map.
@@ -220,6 +236,26 @@ export function TrainMap({
     syncMarkers();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [liveTrains, selectedTrainId]);
+
+  // Marker lokasi pengguna.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !loadedRef.current) return;
+    if (userLocation) {
+      if (!userMarkerRef.current) {
+        userMarkerRef.current = new maplibregl.Marker({
+          element: makeUserLocationEl(),
+          anchor: "center",
+        });
+      }
+      userMarkerRef.current
+        .setLngLat([userLocation.lng, userLocation.lat])
+        .addTo(map);
+    } else if (userMarkerRef.current) {
+      userMarkerRef.current.remove();
+      userMarkerRef.current = null;
+    }
+  }, [userLocation]);
 
   return (
     <div className={className ?? "absolute inset-0"}>

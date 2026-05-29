@@ -58,6 +58,21 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="mx-auto mt-auto w-full max-w-2xl px-5 py-6">
+        <p className="text-xs text-zinc-400">
+          Proyek komunitas non-komersial. Tidak berafiliasi dengan PT KAI.
+        </p>
+        <div className="mt-2 flex gap-4 text-xs">
+          <Link href="/privasi" className="text-zinc-500 hover:text-blue-700">
+            Kebijakan Privasi
+          </Link>
+          <Link href="/ketentuan" className="text-zinc-500 hover:text-blue-700">
+            Syarat &amp; Ketentuan
+          </Link>
+        </div>
+      </footer>
     </main>
   );
 }

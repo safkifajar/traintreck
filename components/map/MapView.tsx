@@ -43,6 +43,12 @@ export function MapView({
   const [classFilter, setClassFilter] = useState<TrainClass | "Semua">("Semua");
   const [dirFilter, setDirFilter] = useState<Direction | "Semua">("Semua");
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [userLocation, setUserLocation] = useState<{
+    lat: number;
+    lng: number;
+  } | null>(null);
+  const [locating, setLocating] = useState(false);
+  const [locError, setLocError] = useState<string | null>(null);
   const mapInstanceRef = useRef<maplibregl.Map | null>(null);
 
   const lngById = useMemo(
@@ -84,6 +90,32 @@ export function MapView({
     mapInstanceRef.current?.flyTo({ center: PWT_CENTER, zoom: 7.5 });
   }
 
+  function locateMe() {
+    if (!("geolocation" in navigator)) {
+      setLocError("Perangkat tidak mendukung lokasi.");
+      return;
+    }
+    setLocating(true);
+    setLocError(null);
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const loc = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        setUserLocation(loc);
+        setLocating(false);
+        mapInstanceRef.current?.flyTo({ center: [loc.lng, loc.lat], zoom: 13 });
+      },
+      (err) => {
+        setLocating(false);
+        setLocError(
+          err.code === err.PERMISSION_DENIED
+            ? "Izin lokasi ditolak. Aktifkan di pengaturan browser."
+            : "Tidak bisa mendapatkan lokasi. Coba lagi."
+        );
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 30000 }
+    );
+  }
+
   return (
     <div className={`relative ${heightClass}`}>
       <TrainMap
@@ -93,6 +125,7 @@ export function MapView({
         onSelectTrain={(id) => setSelectedId(id)}
         selectedTrainId={selectedId}
         onMapReady={(m) => (mapInstanceRef.current = m)}
+        userLocation={userLocation}
       />
 
       {/* Filter chips sticky di atas */}
@@ -139,12 +172,26 @@ export function MapView({
       </div>
 
       {/* Recenter button */}
-      <button
-        onClick={recenter}
-        className="absolute right-3 top-28 z-10 rounded-full bg-white px-3 py-2 text-xs font-medium text-zinc-700 shadow-md sm:top-32"
-      >
-        Ke Purwokerto
-      </button>
+      <div className="absolute right-3 top-28 z-10 flex flex-col items-end gap-2 sm:top-32">
+        <button
+          onClick={recenter}
+          className="rounded-full bg-white px-3 py-2 text-xs font-medium text-zinc-700 shadow-md"
+        >
+          Ke Purwokerto
+        </button>
+        <button
+          onClick={locateMe}
+          disabled={locating}
+          className="rounded-full bg-blue-600 px-3 py-2 text-xs font-medium text-white shadow-md disabled:opacity-60"
+        >
+          {locating ? "Mencari…" : "Lokasi saya"}
+        </button>
+        {locError && (
+          <p className="max-w-[200px] rounded-md bg-white/95 px-2 py-1 text-right text-[11px] text-red-600 shadow">
+            {locError}
+          </p>
+        )}
+      </div>
 
       {/* Legend kelas */}
       <Legend />
